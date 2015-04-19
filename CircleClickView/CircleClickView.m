@@ -186,7 +186,6 @@
     //CGContextSetRGBStrokeColor(context,1,1,0,1);
     
     
-    
     CGContextSetLineWidth(context,0.5);  //设置划线
     
 
@@ -223,7 +222,7 @@
     
     centerCirclePath =  CGPathCreateMutable();
     
-    CGPathAddArc(centerCirclePath, &CGAffineTransformIdentity, self.bounds.size.width/2, self.bounds.size.width/2, self.bounds.size.width/8,angle1,angle2, false);
+    CGPathAddArc(centerCirclePath, &CGAffineTransformIdentity, self.bounds.size.width/2, self.bounds.size.width/2, self.bounds.size.width/8 + 10,angle1,angle2, false);
     CGContextAddPath(context, centerCirclePath);
     if(self.isClickCenter)
     {
@@ -237,41 +236,67 @@
     }
     CGContextDrawPath(context, kCGPathEOFillStroke); //绘制路径
     
-    CAShapeLayer *pathLayer = [CAShapeLayer layer];
-    pathLayer.frame = self.bounds;
-      pathLayer.path = [[self.edgePathArray objectAtIndex:2] pointerValue];
-    pathLayer.strokeColor = [[UIColor redColor] CGColor];
-    pathLayer.fillColor = nil;
-    pathLayer.lineWidth = 4.0f;
-    pathLayer.lineJoin = kCALineJoinBevel;
+    for(int i = 0;i<self.contentArray.count;i++)
+    {
+       int  rs =(1<<i)&(self.status);
+        NSLog(@"rs:%ox",rs);
+        
+        if(rs >0)
+        {
+            CAShapeLayer *pathLayer = [CAShapeLayer layer];
+            pathLayer.frame = self.bounds;
+            pathLayer.path = [[self.edgePathArray objectAtIndex:i] pointerValue];
+           
+            if(i ==1)
+            {
+                pathLayer.strokeColor = [[UIColor colorWithRed:26/255.0 green:193/255.0 blue:166/255.0 alpha:1] CGColor];
+            }
+            else if(i == 4)
+            {
+                pathLayer.strokeColor = [[UIColor colorWithRed:74/255.0 green:194/255.0 blue:44/255.0 alpha:1] CGColor];
+            }
+            else
+            {
+                pathLayer.strokeColor = [[UIColor redColor] CGColor];
+            }
+            pathLayer.fillColor = nil;
+            pathLayer.lineWidth = 4.0f;
+            pathLayer.lineJoin = kCALineJoinBevel;
+            
+            [self.layer addSublayer:pathLayer];
+            
 
-    [self.layer addSublayer:pathLayer];
+            
+            
+            CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+            pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+            pathAnimation.duration = 0.3;
+            pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
+            pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+            [pathLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
+        }
+    }
+    
+    
 
-
-    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation.duration = 0.3;
-    pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-    pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
-    [pathLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
     
-    pathLayer = [CAShapeLayer layer];
-    pathLayer.frame = self.bounds;
-    pathLayer.path = [[self.edgePathArray objectAtIndex:0] pointerValue];
-    pathLayer.strokeColor = [[UIColor redColor] CGColor];
-    pathLayer.fillColor = nil;
-    pathLayer.lineWidth = 4.0f;
-    pathLayer.lineJoin = kCALineJoinBevel;
-    
-    [self.layer addSublayer:pathLayer];
-    
-    
-    pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation.duration = 0.3;
-    pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-    pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
-    [pathLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
+//    pathLayer = [CAShapeLayer layer];
+//    pathLayer.frame = self.bounds;
+//    pathLayer.path = [[self.edgePathArray objectAtIndex:0] pointerValue];
+//    pathLayer.strokeColor = [[UIColor redColor] CGColor];
+//    pathLayer.fillColor = nil;
+//    pathLayer.lineWidth = 4.0f;
+//    pathLayer.lineJoin = kCALineJoinBevel;
+//    
+//    [self.layer addSublayer:pathLayer];
+//    
+//    
+//    pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+//    pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+//    pathAnimation.duration = 0.3;
+//    pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
+//    pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+//    [pathLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
 
 }
 
@@ -329,7 +354,6 @@
     
     for(int i = 0;i<self.pathArray.count;i++)
     {
-        
         if(CGPathContainsPoint([[self.pathArray objectAtIndex:i] pointerValue],  &CGAffineTransformIdentity, point, YES)){
             if(i + 1 == self.clickWhich)
             {
@@ -338,11 +362,12 @@
                 {
                     _edgeBlock(self.clickWhich);
                 }
-                [self resetData];
+                
             }
             
         }
     }
+    [self resetData];
 }
 
 -(void)resetData

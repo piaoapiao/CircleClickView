@@ -27,6 +27,7 @@
     {
         NSLog(@"click center");
     };
+    self.circleView.status = SecondFinishd |FivthFinishd;
     // Do any additional setup after loading the view, typically from a nib.
 }
 

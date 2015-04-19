@@ -8,6 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_OPTIONS(NSUInteger, UIProgressStatus)
+{
+    NoneFinishd = 0,
+    FirstFinishd  =  1<< 0,
+    SecondFinishd =  1<< 1,
+    ThirdFinishd  =  1<< 2,
+    ForthFinishd  =  1<< 3,
+    FivthFinishd  =  1<< 4,
+};
+
+
+//typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) {
+//    UIViewAutoresizingNone                 = 0,
+//    UIViewAutoresizingFlexibleLeftMargin   = 1 << 0,
+//    UIViewAutoresizingFlexibleWidth        = 1 << 1,
+//    UIViewAutoresizingFlexibleRightMargin  = 1 << 2,
+//    UIViewAutoresizingFlexibleTopMargin    = 1 << 3,
+//    UIViewAutoresizingFlexibleHeight       = 1 << 4,
+//    UIViewAutoresizingFlexibleBottomMargin = 1 << 5
+//};
+
+
 @interface CircleClickView : UIView
 
 @property (nonatomic,strong) NSMutableArray *contentArray;
@@ -19,6 +41,8 @@
 @property (nonatomic,assign) int clickWhich;
 
 @property (nonatomic,assign) BOOL isClickCenter;
+
+@property (nonatomic) UIProgressStatus status;
 
 -(CGMutablePathRef)createPath:(CGMutablePathRef)path withAngle:(float)angle1 andAngle:(float)angle2 andCenter:(CGPoint)center andRadius:(float)radius;
 
