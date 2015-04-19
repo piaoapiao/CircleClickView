@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		464050031AE2734900634B23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 464050021AE2734900634B23 /* main.m */; };
+		464050061AE2734900634B23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 464050051AE2734900634B23 /* AppDelegate.m */; };
+		464050091AE2734900634B23 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 464050081AE2734900634B23 /* ViewController.m */; };
+		4640500C1AE2734900634B23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4640500A1AE2734900634B23 /* Main.storyboard */; };
+		4640500E1AE2734900634B23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4640500D1AE2734900634B23 /* Images.xcassets */; };
+		4640501D1AE2734900634B23 /* CircleClickViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4640501C1AE2734900634B23 /* CircleClickViewTests.m */; };
+		464050281AE273D200634B23 /* CircleClickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 464050271AE273D200634B23 /* CircleClickView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		464050171AE2734900634B23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46404FF51AE2734900634B23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46404FFC1AE2734900634B23;
+			remoteInfo = CircleClickView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		46404FFD1AE2734900634B23 /* CircleClickView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleClickView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		464050011AE2734900634B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		464050021AE2734900634B23 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		464050041AE2734900634B23 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		464050051AE2734900634B23 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		464050071AE2734900634B23 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		464050081AE2734900634B23 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4640500B1AE2734900634B23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4640500D1AE2734900634B23 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		464050161AE2734900634B23 /* CircleClickViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleClickViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4640501B1AE2734900634B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4640501C1AE2734900634B23 /* CircleClickViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleClickViewTests.m; sourceTree = "<group>"; };
+		464050261AE273D200634B23 /* CircleClickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleClickView.h; sourceTree = "<group>"; };
+		464050271AE273D200634B23 /* CircleClickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleClickView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46404FFA1AE2734900634B23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		464050131AE2734900634B23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46404FF41AE2734900634B23 = {
+			isa = PBXGroup;
+			children = (
+				46404FFF1AE2734900634B23 /* CircleClickView */,
+				464050191AE2734900634B23 /* CircleClickViewTests */,
+				46404FFE1AE2734900634B23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		46404FFE1AE2734900634B23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46404FFD1AE2734900634B23 /* CircleClickView.app */,
+				464050161AE2734900634B23 /* CircleClickViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46404FFF1AE2734900634B23 /* CircleClickView */ = {
+			isa = PBXGroup;
+			children = (
+				464050041AE2734900634B23 /* AppDelegate.h */,
+				464050051AE2734900634B23 /* AppDelegate.m */,
+				464050071AE2734900634B23 /* ViewController.h */,
+				464050081AE2734900634B23 /* ViewController.m */,
+				4640500A1AE2734900634B23 /* Main.storyboard */,
+				4640500D1AE2734900634B23 /* Images.xcassets */,
+				464050001AE2734900634B23 /* Supporting Files */,
+				464050261AE273D200634B23 /* CircleClickView.h */,
+				464050271AE273D200634B23 /* CircleClickView.m */,
+			);
+			path = CircleClickView;
+			sourceTree = "<group>";
+		};
+		464050001AE2734900634B23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				464050011AE2734900634B23 /* Info.plist */,
+				464050021AE2734900634B23 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		464050191AE2734900634B23 /* CircleClickViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				4640501C1AE2734900634B23 /* CircleClickViewTests.m */,
+				4640501A1AE2734900634B23 /* Supporting Files */,
+			);
+			path = CircleClickViewTests;
+			sourceTree = "<group>";
+		};
+		4640501A1AE2734900634B23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4640501B1AE2734900634B23 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46404FFC1AE2734900634B23 /* CircleClickView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 464050201AE2734900634B23 /* Build configuration list for PBXNativeTarget "CircleClickView" */;
+			buildPhases = (
+				46404FF91AE2734900634B23 /* Sources */,
+				46404FFA1AE2734900634B23 /* Frameworks */,
+				46404FFB1AE2734900634B23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CircleClickView;
+			productName = CircleClickView;
+			productReference = 46404FFD1AE2734900634B23 /* CircleClickView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		464050151AE2734900634B23 /* CircleClickViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 464050231AE2734900634B23 /* Build configuration list for PBXNativeTarget "CircleClickViewTests" */;
+			buildPhases = (
+				464050121AE2734900634B23 /* Sources */,
+				464050131AE2734900634B23 /* Frameworks */,
+				464050141AE2734900634B23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				464050181AE2734900634B23 /* PBXTargetDependency */,
+			);
+			name = CircleClickViewTests;
+			productName = CircleClickViewTests;
+			productReference = 464050161AE2734900634B23 /* CircleClickViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46404FF51AE2734900634B23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = guodong;
+				TargetAttributes = {
+					46404FFC1AE2734900634B23 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					464050151AE2734900634B23 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 46404FFC1AE2734900634B23;
+					};
+				};
+			};
+			buildConfigurationList = 46404FF81AE2734900634B23 /* Build configuration list for PBXProject "CircleClickView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 46404FF41AE2734900634B23;
+			productRefGroup = 46404FFE1AE2734900634B23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46404FFC1AE2734900634B23 /* CircleClickView */,
+				464050151AE2734900634B23 /* CircleClickViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46404FFB1AE2734900634B23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4640500C1AE2734900634B23 /* Main.storyboard in Resources */,
+				4640500E1AE2734900634B23 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		464050141AE2734900634B23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46404FF91AE2734900634B23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464050091AE2734900634B23 /* ViewController.m in Sources */,
+				464050061AE2734900634B23 /* AppDelegate.m in Sources */,
+				464050031AE2734900634B23 /* main.m in Sources */,
+				464050281AE273D200634B23 /* CircleClickView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		464050121AE2734900634B23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4640501D1AE2734900634B23 /* CircleClickViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		464050181AE2734900634B23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46404FFC1AE2734900634B23 /* CircleClickView */;
+			targetProxy = 464050171AE2734900634B23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4640500A1AE2734900634B23 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4640500B1AE2734900634B23 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4640501E1AE2734900634B23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4640501F1AE2734900634B23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		464050211AE2734900634B23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = CircleClickView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		464050221AE2734900634B23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = CircleClickView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		464050241AE2734900634B23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CircleClickViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CircleClickView.app/CircleClickView";
+			};
+			name = Debug;
+		};
+		464050251AE2734900634B23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CircleClickViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CircleClickView.app/CircleClickView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46404FF81AE2734900634B23 /* Build configuration list for PBXProject "CircleClickView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4640501E1AE2734900634B23 /* Debug */,
+				4640501F1AE2734900634B23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		464050201AE2734900634B23 /* Build configuration list for PBXNativeTarget "CircleClickView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				464050211AE2734900634B23 /* Debug */,
+				464050221AE2734900634B23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		464050231AE2734900634B23 /* Build configuration list for PBXNativeTarget "CircleClickViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				464050241AE2734900634B23 /* Debug */,
+				464050251AE2734900634B23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46404FF51AE2734900634B23 /* Project object */;
+}
