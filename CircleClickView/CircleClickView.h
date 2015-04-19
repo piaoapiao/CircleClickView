@@ -23,4 +23,13 @@
 -(CGMutablePathRef)createPath:(CGMutablePathRef)path withAngle:(float)angle1 andAngle:(float)angle2 andCenter:(CGPoint)center andRadius:(float)radius;
 
 -(CGMutablePathRef)createEdgePathwithAngle:(float)angle1 andAngle:(float)angle2 andCenter:(CGPoint)center andRadius:(float)radius;
+
+typedef void (^EdgeSelectBlock)(int which);
+
+typedef void (^CenterSelectBlock)(void);
+
+- (id)initWithFrame:(CGRect)frame andCompletionHandler:(EdgeSelectBlock)edgeBlock andCenterBolock:(CenterSelectBlock)centerBlock;
+
+@property (nonatomic,weak) EdgeSelectBlock edgeBlock;
+@property (nonatomic,weak) CenterSelectBlock centerBlock;
 @end

@@ -27,6 +27,18 @@
 
 @implementation CircleClickView
 
+
+- (id)initWithFrame:(CGRect)frame andCompletionHandler:(EdgeSelectBlock)edgeBlock andCenterBolock:(CenterSelectBlock)centerBlock
+{
+    self = [self initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        self.edgeBlock = edgeBlock;
+        self.centerBlock = centerBlock;
+    }
+    return self;
+}
+
 -(CGMutablePathRef)createPath:(CGMutablePathRef)path withAngle:(float)angle1 andAngle:(float)angle2 andCenter:(CGPoint)center andRadius:(float)radius{
     CGPathMoveToPoint(CGPathCreateMutable(), &CGAffineTransformIdentity, center.x, center.y);
     //get a current angle. for now it's hardcoded
@@ -285,7 +297,6 @@
     {
     
     if(CGPathContainsPoint([[self.pathArray objectAtIndex:i] pointerValue],  &CGAffineTransformIdentity, point, YES)){
-        NSLog(@"clickL%d",i);
         self.clickWhich = i + 1;
         [self setNeedsDisplay];
     }
@@ -301,6 +312,10 @@
     if(CGPathContainsPoint(centerCirclePath,  &CGAffineTransformIdentity, point, YES) && self.isClickCenter == YES)
     {
         NSLog(@"respond center");
+        if(_centerBlock)
+        {
+            _centerBlock();
+        }
         [self resetData];
         return;
     }
@@ -319,6 +334,10 @@
             if(i + 1 == self.clickWhich)
             {
                 NSLog(@"responde");
+                if(_edgeBlock)
+                {
+                    _edgeBlock(self.clickWhich);
+                }
                 [self resetData];
             }
             

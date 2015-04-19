@@ -34,6 +34,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="circleView" destination="2sP-Hu-bLA" id="qK8-fX-ReM"/>
                         <outlet property="testView" destination="2sP-Hu-bLA" id="SAO-6e-R14"/>
                     </connections>
                 </viewController>

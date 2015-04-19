@@ -19,6 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.testView.backgroundColor  = [UIColor clearColor];
+    self.circleView.edgeBlock = ^(int which)
+    {
+        NSLog(@"which:%d",which);
+    };
+    self.circleView.centerBlock = ^()
+    {
+        NSLog(@"click center");
+    };
     // Do any additional setup after loading the view, typically from a nib.
 }
 

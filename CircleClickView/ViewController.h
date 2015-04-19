@@ -11,6 +11,7 @@
 
 @interface ViewController : UIViewController
 @property (strong, nonatomic) IBOutlet CircleClickView *testView;
+@property (strong, nonatomic) IBOutlet CircleClickView *circleView;
 
 @end
 
