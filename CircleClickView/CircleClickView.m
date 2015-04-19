@@ -48,6 +48,21 @@
     return path;
 }
 
+-(CGMutablePathRef)createEdgePathwithAngle:(float)angle1 andAngle:(float)angle2 andCenter:(CGPoint)center andRadius:(float)radius{
+    CGMutablePathRef path  = CGPathCreateMutable();
+    //CGPathMoveToPoint(path, &CGAffineTransformIdentity, center.x, center.y);
+    //get a current angle. for now it's hardcoded
+    
+    //radius = 0.97*radius;
+    //0 and 45
+    angle1 = degreesToRadians(angle1);
+    angle2 = degreesToRadians(angle2);
+    
+    CGPathAddArc(path, &CGAffineTransformIdentity, center.x, center.y, radius, angle1,angle2, false);
+    //CGPathCloseSubpath(path);
+    return path;
+}
+
 /*calculates coordinates of circle's point*/
 -(CGPoint)pointOnCircleWithCenter:(CGPoint)center radius:(int)r andAngle:(float)a{
     float x = center.x + r * cos(a);
@@ -73,6 +88,39 @@
     return _contentArray;
 }
 
+-(NSMutableArray *)edgePathArray
+{
+    if(!_edgePathArray)
+    {
+        _edgePathArray = [NSMutableArray array];
+        for(int i = 0;i<self.contentArray.count;i++)
+        {
+            int blockNum = (int)self.contentArray.count;
+            
+            float unitAra = 360/blockNum;
+            
+
+            
+            
+            
+//            CGMutablePathRef path =   [self createPath:CGPathCreateMutable() withAngle:i*unitAra - 90 andAngle:(i + 1 )*unitAra -90 andCenter:CGPointMake(self.bounds.size.width/2, self.bounds.size.width/2)  andRadius:140 -2];
+            
+            CGMutablePathRef path = [self createEdgePathwithAngle:i*unitAra - 90 andAngle:(i + 1 )*unitAra -90 andCenter:CGPointMake(self.bounds.size.width/2,self.bounds.size.width/2) andRadius:140 - 8];
+            
+            //  [_pathArray addObject:(__bridge  id)path];
+            
+            
+            
+            
+            // [_pathArray addObject:[UIBezierPath bezierPathWithCGPath:path]];
+            NSValue *tt  = [NSValue valueWithPointer:path];
+            [_edgePathArray addObject:tt];
+        }
+    }
+    return _edgePathArray;
+}
+
+
 -(NSMutableArray *)pathArray
 {
     
@@ -86,17 +134,17 @@
             //        CGMutablePathRef = [self createPath:CGPathCreateMutable() withAngle:i*unitAra andAngle:(i + 1 )*unitAra andCenter:self.center andRadius:self.frame.size.width/2.0];
             //        CGMutablePathRef = [self C]
             // CGMutablePathRef = [self createPath:CGPathCreateMutable() withAngle:315 andAngle:360 andCenter:center andRadius:srednica/2.0];
-            int blockNum = self.contentArray.count;
+            int blockNum = (int )self.contentArray.count;
             
-            float unitAra = 360/blockNum;
+            float unitAra = 360.0/blockNum;
             
-            float width = self.bounds.size.width;
-            
-            float height = self.bounds.size.height;
+//            float width = self.bounds.size.width;
+//            
+//            float height = self.bounds.size.height;
             
    
             
-            CGMutablePathRef path =   [self createPath:CGPathCreateMutable() withAngle:i*unitAra - 90 andAngle:(i + 1 )*unitAra -90 andCenter:CGPointMake(self.bounds.size.width/2, self.bounds.size.width/2)  andRadius:140 -2];
+            CGMutablePathRef path =   [self createPath:CGPathCreateMutable() withAngle:i*unitAra - 90 andAngle:(i + 1 )*unitAra -90 andCenter:CGPointMake(self.bounds.size.width/2, self.bounds.size.width/2)  andRadius:140 -10];
 
           //  [_pathArray addObject:(__bridge  id)path];
             
@@ -149,21 +197,26 @@
     // CGContextClosePath(context);
     
     
-    grayCirclePath =  [self createPath:CGPathCreateMutable() withAngle:0 andAngle:359 andCenter:CGPointMake(self.bounds.size.width/2, self.bounds.size.width/2)  andRadius:140/2];
-    //CGContextSetRGBStrokeColor(context,(float)(215.0/255),(float)(215.0/255),(float)(215.0/255),1);
+    grayCirclePath =  CGPathCreateMutable();
+    float angle1 = degreesToRadians(0);
+    float angle2 = degreesToRadians(359);
+    
+    
+    CGPathAddArc(grayCirclePath, &CGAffineTransformIdentity, self.bounds.size.width/2, self.bounds.size.width/2, self.bounds.size.width/4,angle1,angle2, false);
     CGContextAddPath(context, grayCirclePath);
     CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:237.0/255 green:237.0/255 blue:237.0/255 alpha:1] CGColor]);
     CGContextDrawPath(context, kCGPathEOFillStroke); //绘制路径
     
     
     
-    centerCirclePath =  [self createPath:CGPathCreateMutable() withAngle:0 andAngle:359 andCenter:CGPointMake(self.bounds.size.width/2, self.bounds.size.width/2)  andRadius:140/4];
+    centerCirclePath =  CGPathCreateMutable();
     
+    CGPathAddArc(centerCirclePath, &CGAffineTransformIdentity, self.bounds.size.width/2, self.bounds.size.width/2, self.bounds.size.width/8,angle1,angle2, false);
     CGContextAddPath(context, centerCirclePath);
     if(self.isClickCenter)
     {
         CGContextSetRGBFillColor (context,  1, 1, 0, 1.0);//设置填充颜色
-
+        
     }
     else
     {
@@ -172,11 +225,43 @@
     }
     CGContextDrawPath(context, kCGPathEOFillStroke); //绘制路径
     
+    CAShapeLayer *pathLayer = [CAShapeLayer layer];
+    pathLayer.frame = self.bounds;
+      pathLayer.path = [[self.edgePathArray objectAtIndex:2] pointerValue];
+    pathLayer.strokeColor = [[UIColor redColor] CGColor];
+    pathLayer.fillColor = nil;
+    pathLayer.lineWidth = 4.0f;
+    pathLayer.lineJoin = kCALineJoinBevel;
+
+    [self.layer addSublayer:pathLayer];
+
+
+    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    pathAnimation.duration = 0.3;
+    pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
+    pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+    [pathLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
+    
+    pathLayer = [CAShapeLayer layer];
+    pathLayer.frame = self.bounds;
+    pathLayer.path = [[self.edgePathArray objectAtIndex:0] pointerValue];
+    pathLayer.strokeColor = [[UIColor redColor] CGColor];
+    pathLayer.fillColor = nil;
+    pathLayer.lineWidth = 4.0f;
+    pathLayer.lineJoin = kCALineJoinBevel;
+    
+    [self.layer addSublayer:pathLayer];
     
     
+    pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    pathAnimation.duration = 0.3;
+    pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
+    pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
+    [pathLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
+
 }
-
-
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -216,12 +301,13 @@
     if(CGPathContainsPoint(centerCirclePath,  &CGAffineTransformIdentity, point, YES) && self.isClickCenter == YES)
     {
         NSLog(@"respond center");
-        self.isClickCenter = NO;
+        [self resetData];
         return;
     }
     
     if(CGPathContainsPoint(grayCirclePath,  &CGAffineTransformIdentity, point, YES))
     {
+        [self resetData];
         return;
     }
     
@@ -230,19 +316,21 @@
     {
         
         if(CGPathContainsPoint([[self.pathArray objectAtIndex:i] pointerValue],  &CGAffineTransformIdentity, point, YES)){
-            //        __block UIColor * redColor = [UIColor redColor];
-            //        touchHandler(redColor);
             if(i + 1 == self.clickWhich)
             {
                 NSLog(@"responde");
-                self.clickWhich = 0;
-                
+                [self resetData];
             }
             
         }
     }
-    
-    
+}
+
+-(void)resetData
+{
+    self.clickWhich = 0;
+    self.isClickCenter = NO;
+    [self setNeedsDisplay];
 }
 
 
