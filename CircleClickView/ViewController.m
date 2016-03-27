@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"zhangliang");
     self.testView.backgroundColor  = [UIColor clearColor];
     self.circleView.edgeBlock = ^(int which)
     {
