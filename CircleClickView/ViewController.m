@@ -17,6 +17,7 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    NSLog(@"wangguodong commit");
     [super viewDidLoad];
     self.testView.backgroundColor  = [UIColor clearColor];
     self.circleView.edgeBlock = ^(int which)
