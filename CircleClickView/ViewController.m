@@ -19,6 +19,9 @@
 - (void)viewDidLoad {
     NSLog(@"wangguodong commit");
     [super viewDidLoad];
+    
+    NSLog(@"Hello2");
+    
     self.testView.backgroundColor  = [UIColor clearColor];
     self.circleView.edgeBlock = ^(int which)
     {
