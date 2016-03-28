@@ -22,6 +22,9 @@
     
     NSLog(@"Hello!");
     NSLog(@"Hello1!");
+    NSLog(@"Hello!");
+    NSLog(@"Hello1!");
+    
     
     self.testView.backgroundColor  = [UIColor clearColor];
     self.circleView.edgeBlock = ^(int which)
